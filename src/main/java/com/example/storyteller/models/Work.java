@@ -45,7 +45,11 @@ public class Work {
         this.author_name = user.getName();
     }
 
-    public String getAuthor(){
+    public User getAuthor(){
+        return this.author;
+    }
+
+    public String getAuthorName(){
         return this.author_name;
     }
     @PrePersist
