@@ -1,4 +1,5 @@
 package com.example.storyteller.controllers;
+import com.example.storyteller.models.Part;
 import com.example.storyteller.models.Work;
 import com.example.storyteller.models.User;
 import com.example.storyteller.services.ProductService;
@@ -18,7 +19,7 @@ import java.security.Principal;
 @RequiredArgsConstructor
 public class WorkController {
     private final ProductService productService;
-
+    private final PartController partcontroller;
     @GetMapping("/")
     public String products(@RequestParam(name = "searchWord", required = false) String title, Principal principal, Model model) {
         model.addAttribute("works", productService.listProducts(title));
@@ -27,20 +28,26 @@ public class WorkController {
         return "works";
     }
 
-    @GetMapping("/product/{id}")
+    @GetMapping("/work/{id}")
     public String productInfo(@PathVariable Long id, Model model, Principal principal) {
         Work product = productService.getWorkById(id);
         model.addAttribute("user", productService.getUserByPrincipal(principal));
         model.addAttribute("work", product);
-        model.addAttribute("images", product.getImages());
+        model.addAttribute("parts", product.getParts());
         model.addAttribute("authorWork", product.getAuthor());
         return "work-info";
     }
 
     @PostMapping("/work/create")
-    public String createProduct(@RequestParam("file1") MultipartFile file1, @RequestParam("file2") MultipartFile file2,
-                                @RequestParam("file3") MultipartFile file3, Work product, Principal principal) throws IOException {
-        productService.saveProduct(principal, product, file1, file2, file3);
+    public String createProduct(Work product, Principal principal) throws IOException {
+        productService.saveProduct(principal, product);
+        return "redirect:/my/works";
+    }
+
+    @PostMapping("/work/add_part")
+    public String createPart(@RequestParam Part new_part, Work product, Principal principal) throws IOException {
+        //здесь добавление части в работу
+        productService.addPartToWork(principal,new_part, product);
         return "redirect:/my/works";
     }
 

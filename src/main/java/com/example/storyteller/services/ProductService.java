@@ -27,7 +27,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public void saveProduct(Principal principal, Work product, MultipartFile file1, MultipartFile file2, MultipartFile file3) throws IOException {
+    public void saveProduct(Principal principal, Work product) throws IOException {
         product.setAuthor(getUserByPrincipal(principal));
         log.info("Saving new Work. Title: {}; Author email: {}", product.getTitle(), product.getAuthor().getEmail());
         Work productFromDb = productRepository.save(product);
@@ -37,6 +37,16 @@ public class ProductService {
     public User getUserByPrincipal(Principal principal) {
         if (principal == null) return new User();
         return userRepository.findByEmail(principal.getName());
+    }
+
+    public void addPartToWork(Principal principal, Part added_part, Work dest_product){
+        if (principal.getName() == dest_product.getAuthorName()){
+            dest_product.addPart(added_part);
+            log.info("Saving new Part. Work Title: {}; Part Title: {}; Author Email: {}", dest_product.getTitle(), added_part.getTitle_part(),getUserByPrincipal(principal).getEmail());
+        }
+        else
+            log.info("New part saving error: not author. Work Title:{} Email:{}", dest_product.getTitle(), dest_product.getAuthor().getEmail());
+
     }
 
     public void deleteProduct(User user, Long id) {
@@ -67,5 +77,9 @@ public class ProductService {
 
     public Work getWorkById(Long id) {
         return productRepository.findById(id).orElse(null);
+    }
+
+    public Part getPartById(Long id) {
+        return partrepository.findById(id).orElse(null);
     }
 }
