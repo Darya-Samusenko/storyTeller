@@ -5,6 +5,5 @@
     <title>StoryTeller Main page</title>
 </head>
 <body>
-
 </body>
 </html>

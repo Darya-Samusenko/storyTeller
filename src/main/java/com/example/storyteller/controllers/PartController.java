@@ -25,6 +25,7 @@ public class PartController {
             model.addAttribute("work", curr_part.getSrc().getTitle());
             model.addAttribute("part_name", curr_part.getTitle_part());
             model.addAttribute("part_content", curr_part.getContent());
+            model.addAttribute("back_ref", curr_part.getSrc().getId());
             return "read_part";
         }
         return "error";
