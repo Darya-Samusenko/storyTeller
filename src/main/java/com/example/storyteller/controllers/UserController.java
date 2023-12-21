@@ -21,30 +21,57 @@ public class UserController {
         return "login";
     }
 
+    /**
+     * Возвращает ссылку на страницу профиля, добавляя в шаблон страницы нужные данные
+     *
+     *  @param model модель страницы HTML
+     *  @param principal пользователь
+     *
+     *  @return ссылка на следующую страницу*/
     @GetMapping("/profile")
     public String profile(Principal principal,
                           Model model) {
         User user = userService.getUserByPrincipal(principal);
-        model.addAttribute("user", user);
+        model.addAttribute("owner", user);
         return "profile";
     }
-
+    /**
+     * Возвращает ссылку на форму регистрации, добавляя в шаблон страницы нужные данные
+     *
+     *  @param model модель страницы HTML
+     *  @param principal пользователь
+     *
+     *  @return ссылка на форму регистрации*/
     @GetMapping("/registration")
     public String registration(Principal principal, Model model) {
         model.addAttribute("user", userService.getUserByPrincipal(principal));
         return "registration";
     }
 
-
+    /**
+     * Вызывается при отправке формы регистрации
+     *
+     *  @param model модель страницы HTML
+     *  @param user пользователь, который хочет зарегистрироваться
+     *
+     *  @return ссылка на форму регистрации или ссылка на страницу авторизации*/
     @PostMapping("/registration")
     public String createUser(User user, Model model) {
         if (!userService.createUser(user)) {
-            model.addAttribute("errorMessage", "Пользователь с email: " + user.getEmail() + " уже существует");
+            model.addAttribute("errorMessage", "User with email: " + user.getEmail() + " already exists");
             return "registration";
         }
         return "redirect:/login";
     }
 
+    /**
+     * Переходит на страницу информации об аккаунте пользователя
+     *
+     *  @param model модель страницы HTML
+     *  @param principal пользователь
+     *  @param user пользователь, чтью информацию хотим просмотреть
+     *
+     *  @return ссылка на страницу профиля пользователя*/
     @GetMapping("/user/{user}")
     public String userInfo(@PathVariable("user") User user, Model model, Principal principal) {
         model.addAttribute("user", user);

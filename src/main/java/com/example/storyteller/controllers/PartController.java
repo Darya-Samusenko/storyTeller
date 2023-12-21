@@ -17,6 +17,16 @@ import java.security.Principal;
 @RequiredArgsConstructor
 public class PartController {
     private final ProductService productService;
+    /**
+     * Возвращает ссылки на след.страницы:
+     * 1)чтения части, если часть найдена
+     * 2)ошибки, если часть не найдена
+     *
+     *  @param id_part искомая часть
+     *  @param model модель страницы HTML
+     *  @param principal пользователь
+     *
+     *  @return ссылка на следующую страницу*/
     @GetMapping("/read/{id_part}")
     public String partContent(@PathVariable Long id_part, Model model, Principal principal) {
         Part curr_part = productService.getPartById(id_part);
