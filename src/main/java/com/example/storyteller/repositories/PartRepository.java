@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface PartRepository extends JpaRepository<Part, Long> {
-    List<Part> findByWork(Work src_work);
+    List<Part> findBySrc(Work src);
 }
