@@ -22,8 +22,7 @@
             <#if user.email??>
                 <div class="dropdown text-end">
                     <a href="/profile">
-                        <img src="/static/images/avatar.png" alt="mdo"
-                             width="32" height="32" class="rounded-circle">
+                        go to profile
                     </a>
                 </div>
             <#else>
@@ -37,6 +36,7 @@
     <div class="container mt-4">
         <p><h1 style="text-align: center">${work.getTitle()}</h1></p>
         <p><h2 style="text-align: center">${authorWork}</h2></p>
+        <p><h2 style="text-align: center">${work.getDescription()}</h2></p>
         <!--сюда вписать как-то части работы (заголовки + ссылки на часть)
         есть проблема со списком, надо каким-то образом вставить thymeleaf без html-тэга или переписать страницу
         без шаблона-->

@@ -27,6 +27,7 @@ public class UserController {
         User founduser = userService.getUserByPrincipal(principal);
         if(founduser == null){
             model.addAttribute("user", userService.getUserByPrincipal(principal));
+            model.addAttribute("incorrect_log", "incorrect login or password");
             return "login";
         }
         return "redirect:/";

@@ -8,7 +8,7 @@
         Add new
     </a>
     <div class="collapse mb-3" id="collapseExample" style="">
-        <form action="/product/create" method="post" enctype="multipart/form-data">
+        <form action="/work/create" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="productName">Title</label>
                 <input type="text" required class="form-control"
@@ -23,6 +23,7 @@
             <button type="submit" style="width: 100%" class="btn btn-dark">Add work</button>
         </form>
     </div>
+
     <div class="card-columns">
         <#list works as product>
             <a href="/work/${product.id}" class="product-link">
@@ -38,6 +39,21 @@
                     <div class="card-body">
                         <h5 class="card-title">${product.getTitle()}</h5>
                     </div>
+                </div>
+                <div class="collapse mb-3" id="collapseExample" style="">
+                    <form action="/work/add_part" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="partName">Title</label>
+                            <input type="text" required class="form-control"
+                                   id="partName" name="title_part">
+                        </div>
+                        <div class="form-group">
+                            <label for="content_part">Content of part</label>
+                            <textarea required class="form-control" id="content_part" name="content_part">Write here...</textarea>
+                        </div>
+                        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                        <button type="submit" style="width: 100%" class="btn btn-dark">Add part</button>
+                    </form>
                 </div>
             </a>
         <#else>

@@ -23,8 +23,7 @@
             <#if user.email??>
                 <div class="dropdown text-end">
                     <a href="/profile">
-                        <img src="/static/images/avatar.png" alt="mdo"
-                             width="32" height="32" class="rounded-circle">
+                        go to profile
                     </a>
                 </div>
             <#else>

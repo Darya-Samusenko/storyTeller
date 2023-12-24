@@ -161,3 +161,79 @@ org.springframework.security.authentication.InternalAuthenticationServiceExcepti
 2023-12-24 16:00:26.930 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-12-24 16:00:26.931 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2023-12-24 16:00:26.937 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-12-24 18:35:21.360 [main] INFO  c.e.storyteller.UserServiceTest - Starting UserServiceTest using Java 21.0.1 with PID 5456 (started by ASUS in E:\РиАТ\greatStoryteller\storyTeller)
+2023-12-24 18:35:21.361 [main] INFO  c.e.storyteller.UserServiceTest - No active profile set, falling back to 1 default profile: "default"
+2023-12-24 18:35:22.054 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-24 18:35:22.103 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2023-12-24 18:35:22.562 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-24 18:35:22.606 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-24 18:35:22.634 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2023-12-24 18:35:22.834 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-24 18:35:22.856 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-12-24 18:35:23.268 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@254e9709
+2023-12-24 18:35:23.271 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-12-24 18:35:27.856 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-24 18:35:28.026 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:35:29.512 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-24 18:35:30.990 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@79fbcef4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@770be0d0, org.springframework.security.web.context.SecurityContextHolderFilter@3dceec83, org.springframework.security.web.header.HeaderWriterFilter@1545ef47, org.springframework.web.filter.CorsFilter@6c54d0dc, org.springframework.security.web.csrf.CsrfFilter@58f8ce0f, org.springframework.security.web.authentication.logout.LogoutFilter@510d4d4b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@318f47f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31d09031, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a0f5567, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b5f06bb, org.springframework.security.web.access.ExceptionTranslationFilter@17fa25f1, org.springframework.security.web.access.intercept.AuthorizationFilter@10b36d8a]
+2023-12-24 18:35:33.045 [main] INFO  c.e.storyteller.UserServiceTest - Started UserServiceTest in 11.857 seconds (process running for 12.937)
+2023-12-24 18:35:36.973 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:35:36.991 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-12-24 18:35:37.057 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-12-24 18:36:23.309 [main] INFO  c.e.storyteller.UserServiceTest - Starting UserServiceTest using Java 21.0.1 with PID 4268 (started by ASUS in E:\РиАТ\greatStoryteller\storyTeller)
+2023-12-24 18:36:23.311 [main] INFO  c.e.storyteller.UserServiceTest - No active profile set, falling back to 1 default profile: "default"
+2023-12-24 18:36:23.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-24 18:36:23.974 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2023-12-24 18:36:25.549 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-24 18:36:25.895 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-24 18:36:26.074 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2023-12-24 18:36:27.483 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-24 18:36:27.600 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-12-24 18:36:29.276 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4db728df
+2023-12-24 18:36:29.287 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-12-24 18:36:33.189 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-24 18:36:33.314 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:36:34.841 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-24 18:36:36.296 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54519d74, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ec96512, org.springframework.security.web.context.SecurityContextHolderFilter@4fe687b5, org.springframework.security.web.header.HeaderWriterFilter@31d09031, org.springframework.web.filter.CorsFilter@3d00c2ae, org.springframework.security.web.csrf.CsrfFilter@1de83be1, org.springframework.security.web.authentication.logout.LogoutFilter@1315f1d5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@770be0d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a86112a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3203ffa3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@665574fb, org.springframework.security.web.access.ExceptionTranslationFilter@3dceec83, org.springframework.security.web.access.intercept.AuthorizationFilter@79fbcef4]
+2023-12-24 18:36:38.583 [main] INFO  c.e.storyteller.UserServiceTest - Started UserServiceTest in 15.5 seconds (process running for 16.405)
+2023-12-24 18:36:42.369 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:36:42.386 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-12-24 18:36:42.439 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-12-24 18:41:11.842 [main] INFO  c.e.storyteller.UserServiceTest - Starting UserServiceTest using Java 21.0.1 with PID 5964 (started by ASUS in E:\РиАТ\greatStoryteller\storyTeller)
+2023-12-24 18:41:11.844 [main] INFO  c.e.storyteller.UserServiceTest - No active profile set, falling back to 1 default profile: "default"
+2023-12-24 18:41:12.381 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-24 18:41:12.436 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2023-12-24 18:41:12.875 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-24 18:41:12.920 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-24 18:41:12.948 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2023-12-24 18:41:13.139 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-24 18:41:13.160 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-12-24 18:41:13.444 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d76099a
+2023-12-24 18:41:13.445 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-12-24 18:41:14.332 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-24 18:41:14.392 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:41:14.731 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-24 18:41:14.986 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5220e6ff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@602d5417, org.springframework.security.web.context.SecurityContextHolderFilter@1d921267, org.springframework.security.web.header.HeaderWriterFilter@3eb7ff78, org.springframework.web.filter.CorsFilter@75128cf, org.springframework.security.web.csrf.CsrfFilter@234dfc8e, org.springframework.security.web.authentication.logout.LogoutFilter@63e54c66, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59da4992, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@684a34f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@52ec5ba6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33ccab9c, org.springframework.security.web.access.ExceptionTranslationFilter@3d00c2ae, org.springframework.security.web.access.intercept.AuthorizationFilter@1a16583d]
+2023-12-24 18:41:15.365 [main] INFO  c.e.storyteller.UserServiceTest - Started UserServiceTest in 3.747 seconds (process running for 4.677)
+2023-12-24 18:41:16.126 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:41:16.128 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-12-24 18:41:16.138 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-12-24 18:41:45.323 [main] INFO  c.e.storyteller.UserServiceTest - Starting UserServiceTest using Java 21.0.1 with PID 14956 (started by ASUS in E:\РиАТ\greatStoryteller\storyTeller)
+2023-12-24 18:41:45.325 [main] INFO  c.e.storyteller.UserServiceTest - No active profile set, falling back to 1 default profile: "default"
+2023-12-24 18:41:45.876 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-24 18:41:45.925 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+2023-12-24 18:41:46.359 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-24 18:41:46.408 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+2023-12-24 18:41:46.436 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2023-12-24 18:41:46.645 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-24 18:41:46.664 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-12-24 18:41:46.934 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6248cfab
+2023-12-24 18:41:46.937 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-12-24 18:41:47.828 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-12-24 18:41:47.886 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:41:48.235 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-24 18:41:48.475 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4bbabec8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1043c493, org.springframework.security.web.context.SecurityContextHolderFilter@7c08461b, org.springframework.security.web.header.HeaderWriterFilter@5c94d4b8, org.springframework.web.filter.CorsFilter@2b27d5d3, org.springframework.security.web.csrf.CsrfFilter@5d72da0b, org.springframework.security.web.authentication.logout.LogoutFilter@42c9f2cd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2b68c59b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2060df8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e38329d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12115c28, org.springframework.security.web.access.ExceptionTranslationFilter@77587422, org.springframework.security.web.access.intercept.AuthorizationFilter@6020cd42]
+2023-12-24 18:41:48.914 [main] INFO  c.e.storyteller.UserServiceTest - Started UserServiceTest in 3.857 seconds (process running for 4.681)
+2023-12-24 18:41:51.141 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-24 18:41:51.151 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-12-24 18:41:51.188 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
