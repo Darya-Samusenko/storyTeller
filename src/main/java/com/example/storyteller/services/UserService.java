@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
 
-    @Autowired
+    //@Autowired
     private final PasswordEncoder passwordEncoder;
     public boolean createUser(User user) {
         String email = user.getEmail();

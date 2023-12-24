@@ -20,7 +20,7 @@
             </div>
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
-            <button type="submit" style="width: 100%" class="btn btn-dark">Добавить</button>
+            <button type="submit" style="width: 100%" class="btn btn-dark">Add work</button>
         </form>
     </div>
     <div class="card-columns">
@@ -31,7 +31,7 @@
                         <form action="/work/delete/${product.id}" method="post">
                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                             <button type="submit" class="btn btn-danger m-3">
-                                Удалить
+                                Delete
                             </button>
                         </form>
                     </div>

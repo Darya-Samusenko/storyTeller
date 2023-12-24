@@ -17,8 +17,19 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Principal principal, Model model) {
+        User founduser = userService.getUserByPrincipal(principal);
         model.addAttribute("user", userService.getUserByPrincipal(principal));
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String login_user(Principal principal, Model model) {
+        User founduser = userService.getUserByPrincipal(principal);
+        if(founduser == null){
+            model.addAttribute("user", userService.getUserByPrincipal(principal));
+            return "login";
+        }
+        return "redirect:/";
     }
 
     /**

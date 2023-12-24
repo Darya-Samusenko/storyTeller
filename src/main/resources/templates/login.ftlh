@@ -5,21 +5,23 @@
     <form action="/login " method="post">
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control <#if RequestParameters.error??>is-invalid</#if>" id="email" name="username">
+            <input type="email" class="form-control" id="email" name="nickname">
             <div id="email" class="invalid-feedback">
-                Incorrect email address
+                Invalid email
             </div>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control <#if RequestParameters.error??>is-invalid</#if>" id="password" name="password">
+            <!--убрала if, т.к. не RequestParameters передается в модель, надо его обратно грамотно вставить,
+            чтобы при авторизации было сообщение invalid password итд-->
+            <input type="password" class="form-control " id="password" name="password">
             <div id="password" class="invalid-feedback">
-                Incorrect password
+                Invalid password
             </div>
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <button type="submit" style="width: 100%" class="btn btn-dark">Log in</button>
     </form>
     <hr>
-    <h2>Don't have account? <a href="/registration">Follow here to registration page</a></h2>
+    <h2>Don't have an account? <a href="/registration">Register here and read works for free</a></h2>
 </@t.template>

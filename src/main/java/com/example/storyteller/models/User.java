@@ -1,9 +1,12 @@
 package com.example.storyteller.models;
 
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import com.example.storyteller.models.enums.Role;
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 import java.util.*;
 @Entity
 @Table(name = "users")
@@ -28,7 +31,12 @@ public class User implements UserDetails {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
             mappedBy = "author")
     private List<Work> works = new ArrayList<>();
+    private LocalDateTime dateOfCreated;
 
+    @PrePersist
+    private void init(){
+        this.dateOfCreated = LocalDateTime.now();
+    }
     public boolean isAdmin() {
         return roles.contains(Role.ROLE_ADMIN);
     }
