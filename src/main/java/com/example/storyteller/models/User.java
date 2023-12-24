@@ -26,7 +26,7 @@ public class User implements UserDetails {
     private Set<Role> roles = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
-            mappedBy = "user")
+            mappedBy = "author")
     private List<Work> works = new ArrayList<>();
 
     public boolean isAdmin() {

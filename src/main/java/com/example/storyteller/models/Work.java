@@ -20,7 +20,7 @@ public class Work {
     @JoinColumn(name = "id_user")
     private User author;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
-            mappedBy = "product")
+            mappedBy = "src")
     private List<Part> parts = new ArrayList<>();
     public List<Part> getParts() {
         return parts;
