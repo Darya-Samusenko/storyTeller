@@ -16,20 +16,29 @@ public class Part {
     @JoinColumn(name = "id_work")
     private Work src;
 
-    public int getPartNum() {
-        return part_num;
-    }
+
     public void setPartNumber() {
-        if (src != null && src.getParts() != null) {
-            int maxPartNum = src.getParts().stream()
+        if (this.src != null && this.src.getParts() != null) {
+            int maxPartNum = this.src.getParts().stream()
                     .mapToInt(Part::getPartNum)
                     .max()
                     .orElse(0);
-            part_num = maxPartNum + 1;
+            this.part_num = maxPartNum + 1;
         } else {
-            part_num = 0; // Если Work или список Part пустые
+            this.part_num = 0; // Если Work или список Part пустые
         }
     }
+    public Part(){}
+    public Part(String name, String content, Work work){
+        this.title_part = name;
+        this.content = content;
+        this.src = work;
+        setPartNumber();
+    }
+    public int getPartNum() {
+        return part_num;
+    }
+
 
     private String getPartContent(){
         return this.content;
@@ -39,6 +48,6 @@ public class Part {
     }
     @PrePersist
     private void onCreate() {
-        setPartNumber();
+
     }
 }

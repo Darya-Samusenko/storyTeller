@@ -18,19 +18,10 @@ public class UserController {
     @GetMapping("/login")
     public String login(Principal principal, Model model) {
         User founduser = userService.getUserByPrincipal(principal);
+        if(principal == null)
+            founduser = userService.getUserByMailAndPass((String)model.getAttribute("mail"), (String)model.getAttribute("pass"));
         model.addAttribute("user", userService.getUserByPrincipal(principal));
         return "login";
-    }
-
-    @PostMapping("/login")
-    public String login_user(Principal principal, Model model) {
-        User founduser = userService.getUserByPrincipal(principal);
-        if(founduser == null){
-            model.addAttribute("user", userService.getUserByPrincipal(principal));
-            model.addAttribute("incorrect_log", "incorrect login or password");
-            return "login";
-        }
-        return "redirect:/";
     }
 
     /**
@@ -45,6 +36,7 @@ public class UserController {
                           Model model) {
         User user = userService.getUserByPrincipal(principal);
         model.addAttribute("owner", user);
+        model.addAttribute("user", user);
         return "profile";
     }
     /**

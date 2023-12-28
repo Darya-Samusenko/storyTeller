@@ -30,7 +30,6 @@ public class ProductService {
     public void saveProduct(Principal principal, Work product) throws IOException {
         product.setAuthor(getUserByPrincipal(principal));
         log.info("Saving new Work. Title: {}; Author email: {}", product.getTitle(), product.getAuthor().getEmail());
-        Work productFromDb = productRepository.save(product);
         productRepository.save(product);
     }
 
@@ -39,14 +38,11 @@ public class ProductService {
         return userRepository.findByEmail(principal.getName());
     }
 
-    public void addPartToWork(Principal principal, Part added_part, Work dest_product){
-        if (principal.getName() == dest_product.getAuthorName()){
-            dest_product.addPart(added_part);
-            log.info("Saving new Part. Work Title: {}; Part Title: {}; Author Email: {}", dest_product.getTitle(), added_part.getTitle_part(),getUserByPrincipal(principal).getEmail());
-        }
-        else
-            log.info("New part saving error: not author. Work Title:{} Email:{}", dest_product.getTitle(), dest_product.getAuthor().getEmail());
-
+    public void addPartToWork(Principal principal, Part added_part)throws IOException{
+        Work src_work = added_part.getSrc();
+        src_work.addPart(added_part);
+        log.info("Saving new Part. Work Title: {}; Part Title: {}; Author Email: {}", src_work.getTitle(), added_part.getTitle_part(),getUserByPrincipal(principal).getEmail());
+        partrepository.save(added_part);
     }
 
     public void deleteProduct(User user, Long id) {

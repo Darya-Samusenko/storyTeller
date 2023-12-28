@@ -34,18 +34,24 @@
         </div>
     </nav>
     <div class="container mt-4">
-        <p><h1 style="text-align: center">${work.getTitle()}</h1></p>
-        <p><h2 style="text-align: center">${authorWork}</h2></p>
-        <p><h2 style="text-align: center">${work.getDescription()}</h2></p>
+        <p><h1>Title: ${work.getTitle()}</h1></p>
+        <p>Author: ${authorWork}</p>
+        <p>${work.getDescription()}</p>
         <!--сюда вписать как-то части работы (заголовки + ссылки на часть)
         есть проблема со списком, надо каким-то образом вставить thymeleaf без html-тэга или переписать страницу
         без шаблона-->
-        <h1>Content</h1>
-        <ul>
-            <li th:each="part : ${parts}">
-                <span th:text="${part.getName_part()}"></span>
-            </li>
-        </ul>
+        <h2>Content</h2>
+        <#if parts??>
+            <ul>
+                <li th:each="part : ${parts}">
+                    <span th:text="${part.getName_part()}"><a href = "/read/${part.id_part}"></a></span>
+                </li>
+            </ul>
+        <#else>
+            <h5>Parts of work aren't found</h5>
+        </#if>
+
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

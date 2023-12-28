@@ -34,7 +34,7 @@ public class WorkController {
         model.addAttribute("user", productService.getUserByPrincipal(principal));
         model.addAttribute("work", product);
         model.addAttribute("parts", product.getParts());
-        model.addAttribute("authorWork", product.getAuthor());
+        model.addAttribute("authorWork", product.getAuthor().getName());
         return "work-info";
     }
 
@@ -45,9 +45,8 @@ public class WorkController {
     }
 
     @PostMapping("/work/add_part")
-    public String createPart(@RequestParam Part new_part, Work product, Principal principal) throws IOException {
-        //здесь добавление части в работу
-        productService.addPartToWork(principal,new_part, product);
+    public String createPart(Part part, Principal principal) throws IOException {
+        productService.addPartToWork(principal, part);
         return "redirect:/my/works";
     }
 

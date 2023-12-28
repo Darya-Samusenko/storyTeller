@@ -70,6 +70,14 @@ public class UserService {
         return userRepository.findByEmail(principal.getName());
     }
 
+    public User getUserByMailAndPass(String mail, String pass){
+        User result;
+        result = userRepository.findByEmail(mail);
+        if((result!=null) &&(result.getPassword() != passwordEncoder.encode(pass)))
+            result = null;
+        return result;
+    }
+
     public String getProfileInfo(User usr){
         StringBuilder str = new StringBuilder();
         str.append(usr.getName());

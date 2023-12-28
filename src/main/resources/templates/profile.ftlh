@@ -10,7 +10,7 @@
         </a><br>
     </#if>
     <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
-       href="/my/products">
+       href="/my/works">
         My works
     </a>
     <form action="/logout" method="post">

@@ -1,5 +1,5 @@
 <#macro template user>
-    <!doctype html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <!-- Required meta tags -->
@@ -20,7 +20,7 @@
             <a href="/">
                 <span class="navbar-brand mb-0 h1">GreatStoryteller</span>
             </a>
-            <#if user.email??>
+            <#if user.getEmail()??>
                 <div class="dropdown text-end">
                     <a href="/profile">
                         go to profile

@@ -23,6 +23,8 @@ public class Work {
             mappedBy = "src")
     private List<Part> parts = new ArrayList<>();
     public List<Part> getParts() {
+        if (parts.isEmpty())
+            return null;
         return parts;
     }
 
