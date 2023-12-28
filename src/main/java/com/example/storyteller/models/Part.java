@@ -12,28 +12,16 @@ public class Part {
     private String title_part;
     private String content;
     private int part_num;
-    @ManyToOne
-    @JoinColumn(name = "id_work")
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Work src;
 
-
-    public void setPartNumber() {
-        if (this.src != null && this.src.getParts() != null) {
-            int maxPartNum = this.src.getParts().stream()
-                    .mapToInt(Part::getPartNum)
-                    .max()
-                    .orElse(0);
-            this.part_num = maxPartNum + 1;
-        } else {
-            this.part_num = 0; // Если Work или список Part пустые
-        }
+    public void setPartNumber(int number) {
+        this.part_num = number;
     }
     public Part(){}
     public Part(String name, String content, Work work){
         this.title_part = name;
         this.content = content;
-        this.src = work;
-        setPartNumber();
     }
     public int getPartNum() {
         return part_num;
@@ -45,6 +33,17 @@ public class Part {
     }
     private String getPartTitle(){
         return this.title_part;
+    }
+    public Long getId() {
+        return this.id_part;
+    }
+
+    public void setId(Long id) {
+        this.id_part = id;
+    }
+
+    public void setSrc(Work work){
+        this.src = work;
     }
     @PrePersist
     private void onCreate() {

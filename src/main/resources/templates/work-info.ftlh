@@ -42,11 +42,9 @@
         без шаблона-->
         <h2>Content</h2>
         <#if parts??>
-            <ul>
-                <li th:each="part : ${parts}">
-                    <span th:text="${part.getName_part()}"><a href = "/read/${part.id_part}"></a></span>
-                </li>
-            </ul>
+            <#list parts as part>
+                <span th:text="${part.title_part}"><a href = "${work.id}/read/${part.id_part}"></a></span>
+            </#list>
         <#else>
             <h5>Parts of work aren't found</h5>
         </#if>

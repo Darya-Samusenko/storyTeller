@@ -16,9 +16,11 @@ public class Work {
     private String description;
     private String author_name;
     private WorkTypes type;
-    @ManyToOne
-    @JoinColumn(name = "id_user")
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+
     private User author;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
             mappedBy = "src")
     private List<Part> parts = new ArrayList<>();
@@ -28,6 +30,9 @@ public class Work {
         return parts;
     }
 
+    public Long getIdForNewPart(){
+        return (parts.size()+1L);
+    }
     public Long getId() {
         return id_work;
     }
@@ -55,5 +60,5 @@ public class Work {
         return this.author_name;
     }
     @PrePersist
-    private void onCreate() {  }
+    private void onCreate() {}
 }

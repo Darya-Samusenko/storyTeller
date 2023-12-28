@@ -25,6 +25,7 @@ public class WorkController {
         model.addAttribute("works", productService.listProducts(title));
         model.addAttribute("user", productService.getUserByPrincipal(principal));
         model.addAttribute("searchWord", title);
+        //productService.deleteAll();//если надо снести всю БД
         return "works";
     }
 
@@ -44,10 +45,19 @@ public class WorkController {
         return "redirect:/my/works";
     }
 
-    @PostMapping("/work/add_part")
-    public String createPart(Part part, Principal principal) throws IOException {
-        productService.addPartToWork(principal, part);
+    @PostMapping("/work/{id_work}/add_part")
+    public String createPart(@PathVariable Long id_work, Part part, Principal principal) throws IOException {//так работает
+        Work product = productService.getWorkById(id_work);
+        productService.addPartToWork(principal, part, product);
         return "redirect:/my/works";
+    }
+
+    @PostMapping("/work/add_part/{id_work}")
+    public String redirectToCreatePart(@PathVariable Long id_work, Principal principal, Model model) throws IOException {//так работает
+        Work product = productService.getWorkById(id_work);
+        model.addAttribute("user", productService.getUserByPrincipal(principal));
+        model.addAttribute("destWork",product);
+        return "add_part";
     }
 
     @PostMapping("/work/delete/{id}")

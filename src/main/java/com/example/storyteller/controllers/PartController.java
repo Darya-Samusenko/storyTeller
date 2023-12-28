@@ -27,15 +27,15 @@ public class PartController {
      *  @param principal пользователь
      *
      *  @return ссылка на следующую страницу*/
-    @GetMapping("/read/{id_part}")
-    public String partContent(@PathVariable Long id_part, Model model, Principal principal) {
+    @GetMapping("{id_work}/read/{id_part}")
+    public String partContent(@PathVariable Long id_part,@PathVariable Long id_work, Model model, Principal principal) {
         Part curr_part = productService.getPartById(id_part);
         if(curr_part != null){
             model.addAttribute("user", principal);
-            model.addAttribute("work", curr_part.getSrc().getTitle());
+            model.addAttribute("work", productService.getWorkById(id_work).getTitle());
             model.addAttribute("part_name", curr_part.getTitle_part());
             model.addAttribute("part_content", curr_part.getContent());
-            model.addAttribute("back_ref", curr_part.getSrc().getId());
+            model.addAttribute("back_ref", productService.getWorkById(id_work).getTitle());
             return "read_part";
         }
         return "error";
